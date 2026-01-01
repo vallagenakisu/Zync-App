@@ -39,25 +39,24 @@ const Welcome = () => {
   return (
     <View style={{ height: height, width: width }} className="flex flex-col justify-start items-center relative">
       {/* Header Section - responsive vertical spacing */}
-      <View 
-        className="flex flex-col justify-center items-center" 
+      <View
+        className="flex flex-col justify-center items-center"
         style={{ zIndex: 10, marginVertical: height * 0.08 }}
       >
-        <Image 
-          style={{ width: width * 0.12, height: width * 0.12 }} 
-          source={require('@/assets/icons/logo.png')} 
+        <Image
+          style={{ width: width * 0.12, height: width * 0.12 }}
+          source={require('@/assets/icons/logo.png')}
         />
         <Text style={{ marginTop: height * 0.02 }} className="text-lg text-textsecondary">Hey it's</Text>
-        <Image 
-          style={{ width: width * 0.32, height: width * 0.14, marginTop: height * 0.01 }} 
-          source={require('@/assets/icons/Zync-heading.png')} 
+        <Image
+          style={{ width: width * 0.32, height: width * 0.14, marginTop: height * 0.01 }}
+          source={require('@/assets/icons/Zync-heading.png')}
           resizeMode="contain"
         />
       </View>
-
       {/* Cards Section - responsive container */}
-      <View 
-        className="flex flex-row justify-center items-center" 
+      <View
+        className="flex flex-row justify-center items-center"
         style={{ height: height * 0.4, width: width }}
       >
         <Animated.View
@@ -174,22 +173,24 @@ const Welcome = () => {
       </View>
 
       {/* Bottom Section - responsive spacing */}
-      <View 
+      <View
         className="w-full flex flex-col justify-center items-center"
         style={{ marginTop: 'auto', paddingBottom: height * 0.05 }}
       >
-        <View 
-          className="flex flex-col justify-center items-center" 
+        <View
+          className="flex flex-col justify-center items-center"
           style={{ marginBottom: height * 0.03 }}
         >
-          <Text className="text-textsecondary font-medium">Stay informed with fast,</Text>
-          <Text className="text-textsecondary font-medium">credible news!</Text>
+          <Text className="text-textsecondary text-body-md">Stay informed with fast,</Text>
+          <Text className="text-textsecondary text-body-md">credible news!</Text>
         </View>
-        <GradientButton 
-          imageSource={require('@/assets/icons/thunder.png')} 
-          title="Login / Sign up" 
-          onPress={() => router.push("/(onboarding)/Onboarding1")} 
-        />
+        <View className="w-full px-6" >
+          <GradientButton
+            imageSource={require('@/assets/icons/thunder.png')}
+            title="Login / Sign up"
+            onPress={() => router.push("/(onboarding)/Onboarding1")}
+          />
+        </View>
       </View>
     </View>
   )

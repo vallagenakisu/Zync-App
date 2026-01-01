@@ -1,5 +1,6 @@
 import Post from '@/components/newsfeed/Post';
 import { PostData } from '@/types';
+import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
 import { Dimensions, FlatList, ViewToken } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,7 +14,7 @@ export default function Feed() {
   const postsData: PostData[] = [
     {
       id: '1',
-      primary_image: require('../../assets/newsfeed_asset/images/Politician.png'),
+      primary_image: require('../../assets/images/Politician.png'),
       head_line: "US Puts $50M Bounty on Venezuelan President Nicolás Maduro",
       article_no: 20,
       date: "7 Aug 2025",
@@ -27,7 +28,7 @@ export default function Feed() {
     },
     {
       id: '2',
-      primary_image: require('../../assets/newsfeed_asset/images/Trump.jpg'),
+      primary_image: require('../../assets/images/Trump.jpg'),
       head_line: "Trump Announces New Economic Policy for 2025",
       article_no: 15,
       date: "8 Aug 2025",
@@ -41,7 +42,7 @@ export default function Feed() {
     },
     {
       id: '3',
-      primary_image: require('../../assets/newsfeed_asset/images/batman.jpg'),
+      primary_image: require('../../assets/images/batman.jpg'),
       head_line: "New Batman Film Breaks Box Office Records",
       article_no: 25,
       date: "9 Aug 2025",
@@ -55,7 +56,7 @@ export default function Feed() {
     },
     {
       id: '4',
-      primary_image: require('../../assets/newsfeed_asset/images/dunkirk.png'),
+      primary_image: require('../../assets/images/dunkirk.png'),
       head_line: "Dunkirk Anniversary: Remembering History's Greatest Evacuation",
       article_no: 12,
       date: "10 Aug 2025",
@@ -69,7 +70,7 @@ export default function Feed() {
     },
     {
       id: '5',
-      primary_image: require('../../assets/newsfeed_asset/images/Joker_Backshot.jpg'),
+      primary_image: require('../../assets/images/Joker_Backshot.jpg'),
       head_line: "Joker Sequel Receives Critical Acclaim at Film Festival",
       article_no: 18,
       date: "11 Aug 2025",
@@ -83,7 +84,7 @@ export default function Feed() {
     },
     {
       id: '6',
-      primary_image: require('../../assets/newsfeed_asset/images/City.jpg'),
+      primary_image: require('../../assets/images/City.jpg'),
       head_line: "Smart City Initiative Transforms Urban Living",
       article_no: 22,
       date: "12 Aug 2025",
@@ -97,7 +98,7 @@ export default function Feed() {
     },
     {
       id: '7',
-      primary_image: require('../../assets/newsfeed_asset/images/Library.jpg'),
+      primary_image: require('../../assets/images/Library.jpg'),
       head_line: "Digital Libraries Preserve Ancient Manuscripts",
       article_no: 14,
       date: "13 Aug 2025",
@@ -111,7 +112,7 @@ export default function Feed() {
     },
     {
       id: '8',
-      primary_image: require('../../assets/newsfeed_asset/images/Puppy.jpg'),
+      primary_image: require('../../assets/images/Puppy.jpg'),
       head_line: "Therapy Dogs Help Reduce Stress in Healthcare Workers",
       article_no: 16,
       date: "14 Aug 2025",
@@ -125,7 +126,7 @@ export default function Feed() {
     },
     {
       id: '9',
-      primary_image: require('../../assets/newsfeed_asset/images/Cat.jpg'),
+      primary_image: require('../../assets/images/Cat.jpg'),
       head_line: "Cat Cafes Become Mental Wellness Hotspots",
       article_no: 11,
       date: "15 Aug 2025",
@@ -139,7 +140,7 @@ export default function Feed() {
     },
     {
       id: '10',
-      primary_image: require('../../assets/newsfeed_asset/images/Sky.jpg'),
+      primary_image: require('../../assets/images/Sky.jpg'),
       head_line: "Rare Atmospheric Phenomenon Captivates Millions",
       article_no: 19,
       date: "16 Aug 2025",
@@ -153,7 +154,7 @@ export default function Feed() {
     },
     {
       id: '11',
-      primary_image: require('../../assets/newsfeed_asset/images/Red_man.jpg'),
+      primary_image: require('../../assets/images/Red_man.jpg'),
       head_line: "Indigenous Art Exhibition Celebrates Cultural Heritage",
       article_no: 13,
       date: "17 Aug 2025",
@@ -184,7 +185,8 @@ export default function Feed() {
   }).current;
 
   return (
-    <SafeAreaView className="flex-1 bg-black" edges={['top', 'bottom']}>
+    <SafeAreaView className="flex-1 bg-white" edges={['top', 'bottom']}>
+      <StatusBar style="auto" />
       <FlatList
         ref={flatListRef}
         data={postsData}
@@ -203,7 +205,6 @@ export default function Feed() {
           index,
         })}
       />
-      {/* <Post postData={postsData[0]} /> */}
     </SafeAreaView>
   );
 }

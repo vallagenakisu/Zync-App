@@ -20,8 +20,8 @@ const SignIn = () => {
   return (
     <View className='flex flex-col bg-white' style={{ height: height, width: width }}>
       {/* Header */}
-      <View 
-        className="w-full px-4 justify-center"
+      <View
+        className="w-full mt-10 px-4 justify-center"
         style={{ height: height * 0.1 }}
       >
         <TouchableOpacity
@@ -67,49 +67,49 @@ const SignIn = () => {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0.5 }}
           />
-          
+
           <View style={{ marginTop: height * 0.1 }}>
-            <Image 
-              style={{ height: signInCardSize, width: signInCardSize }} 
-              source={require('../../assets/icons/signinCard.png')} 
+            <Image
+              style={{ height: signInCardSize, width: signInCardSize }}
+              source={require('../../assets/icons/signinCard.png')}
               resizeMode="contain"
             />
           </View>
-          
+
           <View className='flex flex-col' style={{ marginTop: height * 0.06 }}>
-            <Text 
-              className='text-center text-textsecondary font-dm-sans'
-              style={{ fontSize: width * 0.04, marginTop: height * 0.02 }}
+            <Text
+              className='text-body-md text-center text-textsecondary font-dm-sans'
+              style={{ marginTop: height * 0.02 }}
             >
               Let's get into the world of
             </Text>
             <View className='flex flex-row justify-center items-center'>
-              <Text 
-                className='text-center text-textsecondary font-dm-sans'
-                style={{ fontSize: width * 0.04 }}
+              <Text
+                className='text-body-md text-center text-textsecondary font-dm-sans'
+
               >
                 exciting news
               </Text>
-              <Image 
-                style={{ height: thunderIconSize, width: thunderIconSize, marginLeft: 4 }} 
-                source={require('../../assets/icons/thunder.png')} 
+              <Image
+                style={{ height: thunderIconSize, width: thunderIconSize, marginLeft: 4 }}
+                source={require('../../assets/icons/thunder.png')}
                 resizeMode="contain"
               />
             </View>
           </View>
-          
-          <View 
-            className='flex flex-col w-full justify-center items-center'
-            style={{ marginTop: 'auto', gap: height * 0.015, paddingTop: height * 0.1 }}
+
+          <View
+            className='flex  flex-col w-full justify-center items-center  '
+            style={{ marginTop: '150', gap: height * 0.015, paddingTop: height * 0.1 }}
           >
-            <GradientButton 
+            <GradientButton
               title='Continue with Google'
               className='w-full'
               imageSource={require('../../assets/icons/Google.png')}
             />
             <SecondaryButton
               title="Skip for now"
-              onPress={() => router.push({pathname: '/(newsfeed)/Feed'}) }
+              onPress={() => router.push({ pathname: '/(newsfeed)/Feed' })}
             />
           </View>
         </View>

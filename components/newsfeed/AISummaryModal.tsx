@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Dimensions, Modal, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Dimensions, Image, Modal, Text, TouchableOpacity, View } from 'react-native';
 
 const { height } = Dimensions.get('window');
 
@@ -53,13 +53,14 @@ const AISummaryModal = ({ visible, onClose, headline }: AISummaryModalProps) => 
                     style={{
                         transform: [{ translateY: slideAnim }],
                         backgroundColor: 'white',
-                        borderRadius:32,
+                        borderRadius: 32,
                         paddingTop: 16,
                         paddingHorizontal: 20,
                         paddingBottom: 40,
                         maxHeight: height * 0.85,
-                        margin: 40,
-                        
+                        marginHorizontal: 16,
+                        marginVertical: 45,
+
                     }}
                 >
                     {/* Close button */}
@@ -71,21 +72,31 @@ const AISummaryModal = ({ visible, onClose, headline }: AISummaryModalProps) => 
                             <Text className='text-xl text-gray-600'>×</Text>
                         </TouchableOpacity>
                     </View>
-                    <View className='h-[426]  flex flex-col' >
+                    <View className='h-[53%] flex flex-col ' >
                         <View>
                             <Text className='font-dm-sans-bold text-body-md text-[#1D293D]' >{headline}</Text>
                         </View>
-                        <View className='flex flex-row mt-6 gap-2 items-center ' >
-                           <View className='w-3 h-3 bg-[#CAD5E2] rounded-full ' />
-                           <Text className='text-slate-800 font-dm-sans-regular text-body-sm' >US Puts <span className='font-dm-sans-semibold' >$50M Bounty</span> on Venezuelan President Nicolás... </Text>
+                        <View className='flex flex-col mt-2'>
+                            <View className='flex flex-row mt-6 gap-2 items-start' >
+                                <View className='w-3 h-3 bg-[#CAD5E2] rounded-full mt-1' />
+                                <Text className='text-slate-800 font-dm-sans-regular text-body-sm ' >US Puts <Text className='font-dm-sans-semibold' >$50M Bounty</Text> on Venezuelan President Nicolás... </Text>
+                            </View>
+                            <View className='flex flex-row mt-6 gap-2 items-start' >
+                                <View className='w-3 h-3 bg-[#CAD5E2] rounded-full mt-1 ' />
+                                <Text className='text-slate-800 font-dm-sans-regular text-body-sm' >US Puts <Text className='font-dm-sans-semibold' >$50M Bounty</Text> on Venezuelan President Nicolás... </Text>
+                            </View>
+                            <View className='flex flex-row mt-6 gap-2 items-start' >
+                                <View className='w-3 h-3 bg-[#CAD5E2] rounded-full mt-1' />
+                                <Text className='text-slate-800 font-dm-sans-regular text-body-sm' >US Puts <Text className='font-dm-sans-semibold' >$50M Bounty</Text> on Venezuelan President Nicolás... </Text>
+                            </View>
                         </View>
-                        <View className='flex flex-row mt-6 gap-2 items-center ' >
-                           <View className='w-3 h-3 bg-[#CAD5E2] rounded-full ' />
-                           <Text className='text-slate-800 font-dm-sans-regular text-body-sm' >US Puts <span className='font-dm-sans-semibold' >$50M Bounty</span> on Venezuelan President Nicolás... </Text>
+                        <View className='w-full items-center justify-center flex flex-row mt-5 py-3'>
+                            <Image style={{ height: 14, width: 14 }} source={require('../../assets/newsfeed_asset/Icons/lock.png')} />
+                            <Text className='text-body-sm text-gray-500 font-dm-sans-regular mt-1 ml-2' >Watch latests developments</Text>
                         </View>
-                        <View className='flex flex-row mt-6 gap-2 items-center ' >
-                           <View className='w-3 h-3 bg-[#CAD5E2] rounded-full ' />
-                           <Text className='text-slate-800 font-dm-sans-regular text-body-sm' >US Puts <span className='font-dm-sans-semibold' >$50M Bounty</span> on Venezuelan President Nicolás... </Text>
+                        <View className='mt-5 py-4 flex flex-row gap-3 justify-center items-center'>
+                            <Image style={{ width: 25, height: 25 }} source={require('../../assets/newsfeed_asset/Icons/volume-off.png')} />
+                            <Image style={{ width: 25, height: 25 }} source={require('../../assets/newsfeed_asset/Icons/Link Icon.png')} />
                         </View>
                     </View>
                 </Animated.View>
@@ -95,4 +106,3 @@ const AISummaryModal = ({ visible, onClose, headline }: AISummaryModalProps) => 
 };
 
 export default AISummaryModal;
-        //  <View className='w-2 h-2 bg-[#CAD5E2] rounded-full ' />

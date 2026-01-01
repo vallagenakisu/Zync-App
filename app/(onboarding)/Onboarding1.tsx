@@ -28,8 +28,8 @@ export default function Onboarding1Screen() {
   return (
     <View className="flex flex-col bg-white" style={{ height: height, width: width }}>
       {/* Header */}
-      <View 
-        className="w-full px-4 justify-center"
+      <View
+        className="w-full px-4 justify-center mt-8"
         style={{ height: height * 0.1 }}
       >
         <TouchableOpacity
@@ -39,16 +39,8 @@ export default function Onboarding1Screen() {
             width: backButtonSize,
             height: backButtonSize,
             borderRadius: backButtonSize / 2,
-            backgroundColor: "#FFFFFF",
             justifyContent: "center",
             alignItems: "center",
-            shadowColor: "#000",
-            shadowOffset: { width: 0, height: 1 },
-            shadowOpacity: 0.1,
-            shadowRadius: 3,
-            elevation: 2,
-            borderWidth: 1,
-            borderColor: "#F0F0F0",
           }}
         >
           <Image
@@ -58,7 +50,6 @@ export default function Onboarding1Screen() {
           />
         </TouchableOpacity>
       </View>
-
       {/* Title */}
       <View style={{ marginTop: height * 0.02 }} className="flex justify-start items-center">
         <GradientText
@@ -68,42 +59,40 @@ export default function Onboarding1Screen() {
           end={{ x: 1, y: 0.5 }}
         />
       </View>
-
       {/* Main Content - Scrollable for smaller screens */}
-      <ScrollView 
-        contentContainerStyle={{ 
-          flexGrow: 1,
+      <ScrollView
+      className="flex flex-col mt-auto "
+        contentContainerStyle={{
           paddingHorizontal: width * 0.04,
           paddingBottom: height * 0.05,
         }}
         showsVerticalScrollIndicator={false}
       >
-        <View 
-          className="flex flex-col w-full justify-start items-center"
-          style={{ marginTop: selectedOption != null ? height * 0.08 : height * 0.12 }}
+        <View
+          className="flex flex-col w-full justify-start  items-center"
+          style={{ marginTop: selectedOption != null ? height * 0.12 : height * 0.16 }}
         >
-          <Image 
-            style={{ height: questionCardSize, width: questionCardSize }} 
-            source={require('../../assets/icons/QuestionCard.png')} 
+          <Image
+            style={{ height: questionCardSize, width: questionCardSize }}
+            source={require('../../assets/icons/QuestionCard.png')}
             resizeMode="contain"
           />
-          
-          <View 
-            className="flex flex-col w-full" 
+
+          <View
+            className="flex flex-col w-full gap-4"
             style={{ marginTop: height * 0.04 }}
           >
             <Text className="text-textsecondary font-dm-sans">1 of 3</Text>
-            
+
             <View className="flex w-full justify-center" style={{ marginTop: height * 0.015 }}>
-              <Text 
-                className='font-bold font-dm-sans-bold'
-                style={{ fontSize: width * 0.055 }}
+              <Text
+                className='font-bold font-dm-sans-bold text-h3'
               >
                 What kind of news mix do you prefer
               </Text>
             </View>
-            
-            <View style={{ marginTop: height * 0.03, gap: height * 0.015, marginBottom: height * 0.03 }}>
+
+            <View style={{ gap: height * 0.015, marginBottom: height * 0.03 }}>
               {OPTIONS.map((option, index) => (
                 <Option
                   key={index}
@@ -114,12 +103,14 @@ export default function Onboarding1Screen() {
                 />
               ))}
             </View>
-            
+
             {selectedOption != null && (
-              <GradientButton
-                title="Continue"
-                onPress={() => router.push('/(onboarding)/Onboarding2')}
-              />
+              <View>
+                <GradientButton
+                  title="Continue" 
+                  onPress={() => router.push('/(onboarding)/Onboarding2')}
+                />
+              </View>
             )}
           </View>
         </View>

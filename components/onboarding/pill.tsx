@@ -23,13 +23,12 @@ const Pill = ({ icon, label, selected = true, onPress }: PillProps) => {
                 alignItems: 'center',
                 gap: 8,
                 borderRadius: 9999,
-                borderWidth: 1,
-                borderColor: '#E2E8F0',
-                backgroundColor: '#F1F5F9',
+                borderWidth: 0,
+
             }}
         >
             <Image style={{ height: 16, width: 16 }} source={icon} />
-            <Text className="text-textsecondary font-dm-sans text-sm">{label}</Text>
+            <Text className="text-textsecondary text-body-sm font-dm-sans">{label}</Text>
             <Image
                 style={{ height: 14, width: 14 }}
                 source={

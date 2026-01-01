@@ -2,6 +2,7 @@ import BottomModal from '@/components/newsfeed/BottomModal';
 import MorphButtons from '@/components/newsfeed/MorphButtons';
 import { PostProps } from '@/types';
 import { LinearGradient } from 'expo-linear-gradient';
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Dimensions, Image, TouchableOpacity, View } from 'react-native';
 
@@ -48,14 +49,27 @@ const Post = ({ postData }: PostProps) => {
             <View style={{ position: 'absolute', height: height, width: width, zIndex: 1 }}>
                 <View className='flex flex-col m-4 h-full ' >
                     <View className='flex flex-row w-full items-center'>
-                        <TouchableOpacity style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }} >
+                        <TouchableOpacity 
+                            style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}
+                            onPress={() => router.push('/profile')}
+                        >
                             <Image style={{ width: 32, height: 32 }} source={require('../../assets/newsfeed_asset/Icons/Profile.png')} />
                             <Image style={{ width: 52, height: 23 }} source={require('../../assets/newsfeed_asset/Icons/Zync.png')} />
                         </TouchableOpacity>
                         {/* Header Buttons */}
                         <View className='flex flex-row ml-auto gap-2' >
-                            <MorphButtons height={22} width={22} imageSource={require('../../assets/newsfeed_asset/Icons/Notification.png')} />
-                            <MorphButtons height={22} width={22} imageSource={require('../../assets/newsfeed_asset/Icons/search.png')} />
+                            <MorphButtons 
+                                height={22} 
+                                width={22} 
+                                imageSource={require('../../assets/newsfeed_asset/Icons/Notification.png')}
+                                onPress={() => router.push('/notifications')}
+                            />
+                            <MorphButtons 
+                                height={22} 
+                                width={22} 
+                                imageSource={require('../../assets/newsfeed_asset/Icons/search.png')}
+                                onPress={() => router.push('/search')}
+                            />
                         </View>
                     </View>
                     <View className='mt-auto h-[74%] w-full flex flex-col gap-6' >

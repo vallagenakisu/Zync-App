@@ -45,8 +45,8 @@ const Onboarding2 = () => {
     return (
         <View className="flex flex-col bg-white" style={{ height: height, width: width }}>
             {/* Header */}
-            <View 
-                className="w-full px-4 justify-center"
+            <View
+                className="w-full px-4 justify-center mt-8"
                 style={{ height: height * 0.1 }}
             >
                 <TouchableOpacity
@@ -56,16 +56,9 @@ const Onboarding2 = () => {
                         width: backButtonSize,
                         height: backButtonSize,
                         borderRadius: backButtonSize / 2,
-                        backgroundColor: "#FFFFFF",
                         justifyContent: "center",
                         alignItems: "center",
-                        shadowColor: "#000",
-                        shadowOffset: { width: 0, height: 1 },
-                        shadowOpacity: 0.1,
-                        shadowRadius: 3,
-                        elevation: 2,
-                        borderWidth: 1,
-                        borderColor: "#F0F0F0",
+
                     }}
                 >
                     <Image
@@ -95,35 +88,34 @@ const Onboarding2 = () => {
                 }}
                 showsVerticalScrollIndicator={false}
             >
-                <View 
+                <View
                     className="flex flex-col w-full justify-start items-center"
                     style={{ marginTop: height * 0.09 }}
                 >
-                    <Image 
-                        style={{ height: cardSize, width: cardSize }} 
-                        source={require('../../assets/icons/RightCard.png')} 
+                    <Image
+                        style={{ height: cardSize, width: cardSize }}
+                        source={require('../../assets/icons/RightCard.png')}
                         resizeMode="contain"
                     />
-                    
-                    <View 
-                        className="flex flex-col w-full" 
+
+                    <View
+                        className="flex flex-col w-full"
                         style={{ marginTop: height * 0.04 }}
                     >
                         <Text className="text-textsecondary font-dm-sans">2 of 3</Text>
-                        
+
                         <View className="flex w-full justify-center" style={{ marginTop: height * 0.015 }}>
-                            <Text 
-                                className='font-bold font-dm-sans-bold'
-                                style={{ fontSize: width * 0.055 }}
+                            <Text
+                                className='text-h3 font-bold font-dm-sans-bold'
                             >
                                 Unselect topics that you are not interested in
                             </Text>
                         </View>
-                        
-                        <View style={{ marginTop: height * 0.03, marginBottom: height * 0.03 }}>
+
+                        <View style={{ marginTop: height * 0.04 }}>
                             {[0, 2, 4, 6].map((rowStart) => (
-                                <View 
-                                    key={rowStart} 
+                                <View
+                                    key={rowStart}
                                     className='flex flex-row'
                                     style={{ marginBottom: height * 0.015 }}
                                 >
@@ -139,11 +131,12 @@ const Onboarding2 = () => {
                                 </View>
                             ))}
                         </View>
-                        
-                        <GradientButton
-                            title="Continue"
-                            onPress={() => router.push('/(onboarding)/SignIn')}
-                        />
+                        <View className="mt-20">
+                            <GradientButton
+                                title="Continue"
+                                onPress={() => router.push('/(onboarding)/SignIn')}
+                            />
+                        </View>
                     </View>
                 </View>
             </ScrollView>
